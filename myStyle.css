@@ -1,0 +1,34 @@
+body {
+    background: #999;
+    padding: 20px;
+    font-family: Helvetica;
+}
+
+#menu {
+    background: #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    transition: all 0.2s;
+    overflow: auto;
+}
+
+#options {
+    background: #666;
+    border-radius: 4px;
+    padding: 20px;
+    transition: all 0.2s;
+    float: right;
+}
+
+li {
+    margin: 8px 0;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+del {
+    color: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webtime</title>
+    <script src="vue.js"></script>
+    <link rel=stylesheet href=myStyle.css>
+</head>
+<body>
+<div id="app">
+    <div id="options">
+        <input type=text v-model=baseURL>
+
+        <h2>Countries:</h2>
+        <ol>
+            <li v-for="country in countries">
+                <label>
+                    <input type="checkbox"
+                           @change="toggle(country)"
+                           :checked="country.isShown">
+
+                    <!--   <del v-if="!country.isShown">
+                         {{ country.text }}
+                       </del>-->
+                    <span>
+                    {{ country.text }}
+                    </span>
+                </label>
+            </li>
+        </ol>
+        <button @click='countries.push({text: "Zimbabwe", isShown: false})'>Add New!</button>
+    </div>
+    <div id="menu">
+        <ul>
+            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}}</a></li>
+        </ul>
+        <p>Base URL is: {{ baseURL }}
+        <br>Template URLs you can try:
+        <br>Google search: {{google}}
+        <br>SimpleWiki: {{wiki}}<br>
+        </p>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            countries: [
+                { text: "Turkey", isShown: true },
+                { text: "Germany", isShown: false },
+                { text: "France", isShown: false },
+                { text: "Italy", isShown: false }
+            ],
+            baseURL: "https://www.wikizero.com/simple/",
+            google: "https://www.google.com/search?q=",
+            wiki: "https://www.wikizero.com/simple/"
+        },
+        methods: {
+            toggle: function(country){
+                country.isShown = !country.isShown
+            },
+
+            addCountry: function(text, isShown){
+                this.countries.push(text, isShown);
+            }
+        }
+    })
+</script>
+</body>
+</html>
