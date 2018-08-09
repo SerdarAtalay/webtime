@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Webtime</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data.min.js"></script>
     <link rel=stylesheet href=myStyle.css>
 </head>
 <body>
@@ -39,7 +41,8 @@
         <br>Google search: {{google}}
         <br>SimpleWiki: {{wiki}}
         <br>Your machine time is: <p id="clocktext" style="font-kerning:none"></p>
-        <br><span>-end of line-</span>
+        <br>UTC Time is: <iframe src="http://free.timeanddate.com/clock/i6d297sd/" frameborder="0" width="175" height="18" allowTransparency="true"></iframe>
+        <br>Moment Date: <div id="displayMoment"></div>
         </p>
     </div>
 </div>
@@ -51,14 +54,23 @@
         el: "#app",
         data: {
             countries: [
-                { text: "Turkey", isShown: true },
-                { text: "Germany", isShown: false },
-                { text: "France", isShown: false },
-                { text: "Italy", isShown: false }
+                { text: "Turkey", isShown: true
+            },
+                { text: "Germany", isShown: false
+            },
+                { text: "France", isShown: false
+            },
+                { text: "Italy", isShown: false}
             ],
             baseURL: "https://www.wikizero.com/simple/",
             google: "https://www.google.com/search?q=",
-            wiki: "https://www.wikizero.com/simple/"
+            wiki: "https://www.wikizero.com/simple/",
+
+            UTC: "http://free.timeanddate.com/clock/i6d297sd/",
+            TurkeyTime: "https://freesecure.timeanddate.com/clock/i6d297sd/n19/tltr28/tct/pct/tt0/tw1/tm1",
+            GermanyTime: "https://freesecure.timeanddate.com/clock/i6d3utgs/n19/tlde3/tct/pct/tt0/tw1/tm1",
+            FranceTime: "https://freesecure.timeanddate.com/clock/i6d3utgs/n19/tlfr2/tct/pct/tt0/tw1/tm1"
+
         },
         methods: {
             toggle: function(country){
@@ -70,7 +82,28 @@
             }
         }
     })
+
+
 </script>
 <script type="text/javascript" src="clocks.js"></script>
+
+<script type="text/javascript">
+    (function()
+{
+  // instantiate a moment object
+  var NowMoment = moment();
+  
+  // instantiate a JavaScript Date object
+  var NowDate = new Date();
+  
+  // display value of moment object in #displayMoment div
+  var eDisplayMoment = document.getElementById('displayMoment');
+  eDisplayMoment.innerHTML = NowMoment;
+  
+  // display value of Date object in #displayJsDate div
+  var eDisplayDate = document.getElementById('displayJsDate');
+  eDisplayDate.innerHTML = NowDate;
+})();
+</script>
 </body>
 </html>
