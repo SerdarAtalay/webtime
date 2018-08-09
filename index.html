@@ -35,10 +35,10 @@
             <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} 
 </a></li>
         </ul>
-        <p >Local time is: <p id="clocktext" style="font-kerning:none"></p>
-        Template URLs you can try:
+        <p>Template URLs you can try:
         <br>Google search: {{google}}
-        <br>SimpleWiki: {{wiki}}<br>
+        <br>SimpleWiki: {{wiki}}
+        <br>Your machine time is: <p id="clocktext" style="font-kerning:none"></p>
         </p>
     </div>
 </div>
