@@ -65,7 +65,7 @@
             google: "https://www.google.com/search?q=",
             wiki: "https://www.wikizero.com/simple/",
 
-            UTC: "http://free.timeanddate.com/clock/i6d297sd/",
+            UTC: "https://free.timeanddate.com/clock/i6d297sd/",
             TurkeyTime: "https://freesecure.timeanddate.com/clock/i6d297sd/n19/tltr28/tct/pct/tt0/tw1/tm1",
             GermanyTime: "https://freesecure.timeanddate.com/clock/i6d3utgs/n19/tlde3/tct/pct/tt0/tw1/tm1",
             FranceTime: "https://freesecure.timeanddate.com/clock/i6d3utgs/n19/tlfr2/tct/pct/tt0/tw1/tm1"
@@ -91,16 +91,11 @@
   // instantiate a moment object
   var NowMoment = moment();
   
-  // instantiate a JavaScript Date object
-  var NowDate = new Date();
-  
   // display value of moment object in #displayMoment div
   var eDisplayMoment = document.getElementById('displayMoment');
   eDisplayMoment.innerHTML = NowMoment;
   
-  // display value of Date object in #displayJsDate div
-  var eDisplayDate = document.getElementById('displayJsDate');
-  eDisplayDate.innerHTML = NowDate;
+
 })();
 </script>
 </body>
