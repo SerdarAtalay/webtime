@@ -32,10 +32,11 @@
     </div>
     <div id="menu">
         <ul>
-            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}}</a></li>
+            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} 
+</a></li>
         </ul>
-        <p>Base URL is: {{ baseURL }}
-        <br>Template URLs you can try:
+        <p >Local time is: <p id="clocktext" style="font-kerning:none"></p>
+        Template URLs you can try:
         <br>Google search: {{google}}
         <br>SimpleWiki: {{wiki}}<br>
         </p>
@@ -69,5 +70,6 @@
         }
     })
 </script>
+<script type="text/javascript" src="clocks.js"></script>
 </body>
 </html>
