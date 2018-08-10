@@ -5,8 +5,29 @@
     <title>Webtime</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.4.1/moment-timezone-with-data-2010-2020.min.js"></script>
     <link rel=stylesheet href=myStyle.css>
+    <script>
+    $(function(){
+  setInterval(function(){
+    var divUtc = $('#divUTC');
+    var divLocal = $('#divLocal');  
+    //put UTC time into divUTC  
+    divUtc.text(moment.utc().format('DD-MM-YYYY HH:mm:ss'));      
+    
+    //get text from divUTC and conver to local timezone  
+    var localTime  = moment.utc(divUtc.text()).toDate();
+    localTime = moment(localTime).format('DD-MM-YYYY HH:mm:ss');
+    divLocal.text(localTime);  
+      
+    $('#divTurkey').text(moment.tz('Europe/Istanbul').format('DD-MM-YYYY HH:mm:ss'));
+    $('#divGermany').text(moment.tz('Europe/Berlin').format('DD-MM-YYYY HH:mm:ss'));
+  },1000);
+});
+</script>
 </head>
 <body>
 <div id="app">
@@ -32,17 +53,38 @@
         </ol>
         <button @click='countries.push({text: "Zimbabwe", isShown: false})'>Add New!</button>
     </div>
+
+
     <div id="menu">
         <ul>
-            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} 
-</a></li>
+            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} </a></li>
         </ul>
+        
         <p>Template URLs you can try:
-        <br>Google search: {{google}}
-        <br>SimpleWiki: {{wiki}}
-        <br>Moment Date: <div id="displayMoment"></div>
+            <br>Google search: {{google}}
+            <br>SimpleWiki: {{wiki}}  
+        
+
+            <div id="divUTC">
+            </div><br/>
+
+            Your Local Time with respect to above UTC time<br/>
+            <div id="divLocal">
+            </div><br/>   
+
+            Turkey date time<br/>
+            <div id="divTurkey">
+            </div><br/>
+
+            Germany date time<br/>
+            <div id="divGermany">
+            </div>
+
         </p>
     </div>
+  
+       
+    
 </div>
 
 
@@ -79,18 +121,6 @@
 
 </script>
 
-<script type="text/javascript">
-    (function()
-{
-  // instantiate a moment object
-  var NowMoment = moment();
-  
-  // display value of moment object in #displayMoment div
-  var eDisplayMoment = document.getElementById('displayMoment');
-  eDisplayMoment.innerHTML = NowMoment;
-  
 
-})();
-</script>
 </body>
 </html>
