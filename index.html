@@ -8,26 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.4.1/moment-timezone-with-data-2010-2020.min.js"></script>
     <link rel=stylesheet href=myStyle.css>
-    <script>
-    $(function(){
-  setInterval(function(){
-    var divUtc = $('#divUTC');
-    var divLocal = $('#divLocal');  
-    //put UTC time into divUTC  
-    divUtc.text(moment.utc().format('DD-MM-YYYY HH:mm:ss'));      
-    
-    //get text from divUTC and conver to local timezone  
-    var localTime  = moment.utc(divUtc.text()).toDate();
-    localTime = moment(localTime).format('DD-MM-YYYY HH:mm:ss');
-    divLocal.text(localTime);  
-      
-    $('#divTurkey').text(moment.tz('Europe/Istanbul').format('DD-MM-YYYY HH:mm:ss'));
-    $('#divGermany').text(moment.tz('Europe/Berlin').format('DD-MM-YYYY HH:mm:ss'));
-  },1000);
-});
-</script>
 </head>
 <body>
 <div id="app">
@@ -51,35 +32,28 @@
                 </label>
             </li>
         </ol>
-        <button @click='countries.push({text: "Zimbabwe", isShown: false})'>Add New!</button>
+        <!--<button @click='countries.push({text: "Zimbabwe", isShown: false})'>Add New!</button>-->
     </div>
 
 
     <div id="menu">
         <ul>
-            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} </a></li>
+            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} </a>
+            <div :id="country.timezone" style="height: 50px"><div class="datetime">
+            </div>
+            </div><br/>   </li>
         </ul>
         
         <p>Template URLs you can try:
             <br>Google search: {{google}}
             <br>SimpleWiki: {{wiki}}  
-        
 
+            <br/>UTC time
             <div id="divUTC">
-            </div><br/>
-
-            Your Local Time with respect to above UTC time<br/>
-            <div id="divLocal">
             </div><br/>   
 
-            Turkey date time<br/>
-            <div id="divTurkey">
-            </div><br/>
-
-            Germany date time<br/>
-            <div id="divGermany">
-            </div>
-
+            
+          
         </p>
     </div>
   
@@ -94,17 +68,17 @@
         el: "#app",
         data: {
             countries: [
-                { text: "Turkey", isShown: true
+                { text: "Turkey", isShown: true, timezone: "divTurkey"
             },
-                { text: "Germany", isShown: false
+                { text: "China", isShown: false, timezone: "divHKong"
             },
-                { text: "France", isShown: false
+                { text: "Australia", isShown: true, timezone: "divAust"
             },
-                { text: "Italy", isShown: false}
+                { text: "America", isShown: false, timezone: "divAmer"}
             ],
             baseURL: "https://www.wikizero.com/simple/",
             google: "https://www.google.com/search?q=",
-            wiki: "https://www.wikizero.com/simple/",
+            wiki: "https://www.wikizero.com/simple/"
 
         },
         methods: {
@@ -112,12 +86,24 @@
                 country.isShown = !country.isShown
             },
 
-            addCountry: function(text, isShown){
-                this.countries.push(text, isShown);
+            addCountry: function(text, isShown, timezone){
+                this.countries.push(text, isShown, timezone);
             }
         }
     })
 
+    $(function(){
+  setInterval(function(){
+    var divUtc = $('#divUTC');
+    //put UTC time into divUTC  
+    divUtc.text(moment.utc().format('DD-MM-YYYY HH:mm:ss'));      
+
+    var divTurkey = $('#divTurkey').text(moment.tz('Europe/Istanbul').format('DD-MM-YYYY HH:mm:ss'));
+    var divHKong = $('#divHKong').text(moment.tz('Asia/Hong_Kong').format('DD-MM-YYYY HH:mm:ss'));
+    var divAust = $('#divAust').text(moment.tz('Australia/Sydney').format('DD-MM-YYYY HH:mm:ss'));
+    var divAust = $('#divAmer').text(moment.tz('America/Los_Angeles').format('DD-MM-YYYY HH:mm:ss'));
+  },1000);
+});
 
 </script>
 
