@@ -1,11 +1,12 @@
 body {
-    background: #999;
+    background: linear-gradient(#8FB299, #B2A1A1);
     padding: 20px;
+    background-size: cover;
     font-family: Helvetica;
 }
 
 #menu {
-    background: #ddd;
+	background: linear-gradient(#8FB299, transparent);
     border-radius: 4px;
     padding: 20px;
     transition: all 0.2s;
@@ -13,7 +14,7 @@ body {
 }
 
 #options {
-    background: #666;
+    background: rgba(191, 255, 191,0.1);
     border-radius: 4px;
     padding: 20px;
     transition: all 0.2s;
@@ -21,7 +22,14 @@ body {
 }
 
 li {
-    margin: 8px 0;
+	background: transparent;
+	list-style: none;
+	text-align: center;
+    margin: 8px ;
+    font-weight: bold;
+    color: rgba(63, 58, 55, 0.9);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
@@ -30,5 +38,26 @@ h2 {
 }
 
 del {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 0, 0, 0.9);
+}
+
+a:link {
+    color: rgba(63, 58, 55, 0.9);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: rgba(63, 58, 55, 0.9);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: rgba(63, 58, 55);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: rgba(63, 58, 55, 0.9);
+    background-color: transparent;
+    text-decoration: underline;
 }
