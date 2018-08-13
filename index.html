@@ -39,25 +39,14 @@
     <div id="menu">
         <ul>
             <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} </a>
-            <div :id="country.timezone"><div class="datetime">
-            </div>
+            <div :id="country.timezone">
+                <div class="datetime">
+                </div>
             </div><br/>   </li>
         </ul>
-        
-        <!--<p>Template URLs you can try:
-            <br>Google search: {{google}}
-            <br>SimpleWiki: {{wiki}}
-            <div id="divUTC">
-            </div><br/>
-        </p>-->
     </div>
-  
-       
-    
 </div>
 
-
-<!--<script src="vue.js"></script>-->
 <script>
     new Vue({
         el: "#app",

@@ -1,17 +1,15 @@
 body {
     background: linear-gradient(#8FB299, #B2A1A1);
     padding: 20px;
-    background-size: cover;
     font-family: Palatino;
 }
 
+
 #menu {
-	/*background: linear-gradient(#8FB299, transparent);*/
 	background: transparent;
 	float: center;
     border-radius: 4px;
     padding: 30px;
-    transition: all 0.2s;
 }
 
 #menu li {
@@ -21,16 +19,19 @@ body {
 
 
 #options {
-    background: rgba(191, 255, 191,0.1);
+    background: linear-gradient(rgba(191, 255, 191,0.1), transparent);
     border-radius: 4px;
     padding: 20px;
     transition: all 0.2s;
     float: right;
+    height: 100vmin;
+
 }
 
 ul {
   display: grid;
   grid-template-columns: auto auto;
+  background: transparent;
   justify-content: space-around;
   list-style-type: none;
   padding-left: 0;
