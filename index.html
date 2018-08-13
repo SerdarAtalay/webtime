@@ -73,11 +73,11 @@
             },
                 { text: "London", isShown: true, timezone: "divLondon"
             },
-                { text: "Frankfurt", isShown: false, timezone: "divFrankfurt"
+                { text: "Los Angeles", isShown: false, timezone: "divLosAngeles"
             },
                 { text: "Hong Kong", isShown: false, timezone: "divHongKong"
             },
-                { text: "Central Europe", isShown: false, timezone: "divEurope"
+                { text: "Berlin", isShown: false, timezone: "divBerlin"
             }
             ],
             baseURL: "https://www.google.com/search?q=",
@@ -107,9 +107,9 @@
     var divSydney = $('#divSydney').text(moment.tz('Australia/Sydney').format('HH:mm:ss'));
     var divNYSE = $('#divNYSE').text(moment.tz('America/New_York').format('HH:mm:ss'));
     var divLondon = $('#divLondon').text(moment.tz('Europe/London').format('HH:mm:ss'));
-    var divFrankfurt = $('#divFrankfurt').text(moment.tz('Europe/Frankfurt').format('HH:mm:ss'));
+    var divLosAngeles = $('#divLosAngeles').text(moment.tz('America/Los_Angeles').format('HH:mm:ss'));
     var divHongKong = $('#divHongKong').text(moment.tz('Asia/Hong_Kong').format('HH:mm:ss'));
-    var divEurope = $('#divEurope').text(moment.tz('Europe/Berlin').format('HH:mm:ss'));
+    var divBerlin = $('#divBerlin').text(moment.tz('Europe/Berlin').format('HH:mm:ss'));
   },1000);
 });
 
