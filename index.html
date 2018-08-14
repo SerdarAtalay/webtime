@@ -8,41 +8,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel=stylesheet href=myStyle.css>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
 </head>
 <body>
 <div id="app">
     <div id="options">
-        <input type=text v-model=baseURL>
+        <!--<input type=text v-model=baseURL>-->
 
         <h2>Timezones:</h2>
-        <ol >
-            <li v-for="country in countries">
-                <label>
-                    <input type="checkbox"
-                           @change="toggle(country)"
+        <ol>
+            <div class="btn-group-vertical">
+                <li v-for="country in countries">
+                    <button type="button" class="btn btn-default btn-block"
+                           @click="toggle(country)"
                            :checked="country.isShown">
-
-                    <!--   <del v-if="!country.isShown">
-                         {{ country.text }}
-                       </del>-->
-                    <span>
+                    <p>
                     {{ country.text }}
-                    </span>
-                </label>
-            </li>
+                    </p>
+                
+            </li></div>
         </ol>
-        <!--<button @click='countries.push({text: "Zimbabwe", isShown: false})'>Add New!</button>-->
     </div>
 
 
     <div id="menu">
         <ul>
-            <li v-for="country in countries" v-if="country.isShown"><a :href="baseURL + country.text" target="_blank">{{country.text}} </a>
-            <div :id="country.timezone">
-                <div class="datetime">
+            <li v-for="country in countries" v-if="country.isShown">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                  <img class="card-img-top" :src="'photos/' + country.text + '.jpg'" alt="Card image cap" style="width: 100%; height: 170px;">
+                  <div class="card-body">
+                    
+                    <p class="card-text">{{country.text}}</p><div :id="country.timezone">
+                                <div class="datetime">
+                                </div>
+                            </div>
+                    <a :href="baseURL + country.text" class="btn btn-primary">Take me there</a>
+                  </div>
                 </div>
-            </div><br/>   </li>
+             </li>
         </ul>
     </div>
 </div>
@@ -52,7 +61,7 @@
         el: "#app",
         data: {
             countries: [
-                { text: "İstanbul", isShown: true, timezone: "divBist"
+                { text: "Istanbul", isShown: true, timezone: "divBist"
             },
                 { text: "Tokyo", isShown: false, timezone: "divTokyo"
             },
@@ -89,16 +98,16 @@
   setInterval(function(){
     var divUtc = $('#divUTC');
     //put UTC time into divUTC  
-    divUtc.text(moment.utc().format('HH:mm:ss'));      
+    divUtc.text(moment.utc().format('HH:mm'));      
 
-    var divBist = $('#divBist').text(moment.tz('Europe/Istanbul').format('HH:mm:ss'));
-    var divTokyo = $('#divTokyo').text(moment.tz('Asia/Tokyo').format('HH:mm:ss'));
-    var divSydney = $('#divSydney').text(moment.tz('Australia/Sydney').format('HH:mm:ss'));
-    var divNYSE = $('#divNYSE').text(moment.tz('America/New_York').format('HH:mm:ss'));
-    var divLondon = $('#divLondon').text(moment.tz('Europe/London').format('HH:mm:ss'));
-    var divLosAngeles = $('#divLosAngeles').text(moment.tz('America/Los_Angeles').format('HH:mm:ss'));
-    var divHongKong = $('#divHongKong').text(moment.tz('Asia/Hong_Kong').format('HH:mm:ss'));
-    var divBerlin = $('#divBerlin').text(moment.tz('Europe/Berlin').format('HH:mm:ss'));
+    var divBist = $('#divBist').text(moment.tz('Europe/Istanbul').format('HH:mm'));
+    var divTokyo = $('#divTokyo').text(moment.tz('Asia/Tokyo').format('HH:mm'));
+    var divSydney = $('#divSydney').text(moment.tz('Australia/Sydney').format('HH:mm'));
+    var divNYSE = $('#divNYSE').text(moment.tz('America/New_York').format('HH:mm'));
+    var divLondon = $('#divLondon').text(moment.tz('Europe/London').format('HH:mm'));
+    var divLosAngeles = $('#divLosAngeles').text(moment.tz('America/Los_Angeles').format('HH:mm'));
+    var divHongKong = $('#divHongKong').text(moment.tz('Asia/Hong_Kong').format('HH:mm'));
+    var divBerlin = $('#divBerlin').text(moment.tz('Europe/Berlin').format('HH:mm'));
   },1000);
 });
 
