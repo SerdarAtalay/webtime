@@ -21,18 +21,12 @@
     <div id="options">
         <!--<input type=text v-model=baseURL>-->
 
-        <h2>Timezones:</h2>
-        <ol>
-            <div class="btn-group-vertical">
-                <li v-for="country in countries">
-                    <button type="button" class="btn btn-default btn-block"
-                           @click="toggle(country)"
-                           :checked="country.isShown">
-                    <p>
-                    {{ country.text }}
-                    </p>
-                
-            </li></div>
+        <h2>Timezones</h2>
+        <ol class="list-group">
+                <li class="list-group-item" :class="{ active: country.isShown}"
+                v-for="country in countries" @click="toggle(country)" :checked="country.isShown">
+                    {{ country.text }}          
+            </li>
         </ol>
     </div>
 
@@ -40,7 +34,7 @@
     <div id="menu">
         <ul>
             <li v-for="country in countries" v-if="country.isShown">
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card border-dark bg-light mb-3" style="max-width: 18rem;">
                   <img class="card-img-top" :src="'photos/' + country.text + '.jpg'" alt="Card image cap" style="width: 100%; height: 170px;">
                   <div class="card-body">
                     
@@ -78,9 +72,7 @@
                 { text: "Berlin", isShown: false, timezone: "divBerlin"
             }
             ],
-            baseURL: "https://www.google.com/search?q=",
-            google: "https://www.google.com/search?q=",
-            wiki: "https://www.wikizero.com/simple/"
+            baseURL: "https://www.google.com/search?q="
 
         },
         methods: {
