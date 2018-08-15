@@ -37,15 +37,13 @@ body {
 }
 
 ul {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   padding-left: 0;
 }
 
 li {
-	width: 25vw;
 	padding: 5px 10px;
 	box-sizing: border-box;
 	border: 5%;
@@ -60,11 +58,8 @@ li {
 a {
 	text-align: center;
 	font-size: 200%;
-	box-sizing: border-box;
     border-radius: 15px;
-	list-style: none;
 	text-align: center;
-    margin: 20px ;
     color: black;
     margin-left: auto;
     margin-right: auto;
