@@ -13,7 +13,9 @@ body {
     padding: 30px;
 }
 
-
+.card-img-top{
+	border-radius: 2%;
+}
 
 
 #options {
@@ -43,7 +45,6 @@ ul {
 }
 
 li {
-	width: 100%;
 	width: 25vw;
 	padding: 5px 10px;
 	box-sizing: border-box;
@@ -69,6 +70,10 @@ li {
     margin-right: auto;
 	border-collapse: separate;
     font-family: Palatino;
+    background: linear-gradient(rgba(191, 223, 255, 0.1),rgba(63, 58, 55, 0.2));
+	border-radius: 4%;
+	padding: 30px;
+	margin: 25px;
 }
 
 h2 {
@@ -77,27 +82,19 @@ h2 {
     margin-bottom: 15px;
 }
 
-del {
-    color: rgba(255, 0, 0, 0.9);
-}
-
 a:link {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 a:visited {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 button:hover {
     color: rgb(0, 0, 5);
-    background-color: transparent;
     text-decoration: none;
 }
 button:active {
     color: black;
-    background-color: transparent;
     text-decoration: underline;
 }
