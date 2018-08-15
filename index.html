@@ -33,19 +33,19 @@
 
     <div id="menu">
         <ul>
-            <li v-for="country in countries" v-if="country.isShown">
+            <a v-for="country in countries" v-if="country.isShown" :href="baseURL + country.text">
                 <div class="card border-dark bg-light mb-3" style="max-width: 18rem;">
-                  <img class="card-img-top" :src="'photos/' + country.text + '.jpg'" alt="Card image cap" style="width: 100%; height: 170px;">
-                  <div class="card-body">
+                    <img class="card-img-top" :src="'photos/' + country.text + '.jpg'" alt="Card image cap" style="width: 100%; height: 170px;">
+                    <div class="card-body">
                     
-                    <p class="card-text">{{country.text}}</p><div :id="country.timezone">
-                                <div class="datetime">
-                                </div>
+                        <p class="card-text">{{country.text}}</p>
+                        <div :id="country.timezone">
+                            <div class="datetime">
                             </div>
-                    <a :href="baseURL + country.text" class="btn btn-default">Take me there</a>
-                  </div>
+                        </div>
+                    </div>
                 </div>
-             </li>
+            </a>
         </ul>
     </div>
 </div>
