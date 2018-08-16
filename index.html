@@ -18,16 +18,20 @@
 </head>
 <body>
 <div id="app">
-    <div id="options">
+    
         <!--<input type=text v-model=baseURL>-->
 
-        <h2>Timezones</h2>
-        <ol class="list-group">
-                <li class="list-group-item" :class="{ active: country.isShown}"
+    <!--<h2>Timezones</h2>-->
+    <div id="options">
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <a class="navbar-brand" href="https://github.com/SerdarAtalay/webtime">
+                <img src="photos/GitHub-Mark-32px.png" alt="">
+            </a>
+            <li class="navbar-brand" :class="{ active: country.isShown}"
                 v-for="country in countries" @click="toggle(country)" :checked="country.isShown">
                     {{ country.text }}          
             </li>
-        </ol>
+        </nav>
     </div>
 
 
