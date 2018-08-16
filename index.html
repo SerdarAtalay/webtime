@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Webtime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href=myStyle.css>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel=stylesheet href=myStyle.css>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>.w3-btn {margin-bottom:10px;}</style>
 </head>
 <body>
@@ -32,23 +32,27 @@
     <!---<a class="navbar-brand" href="https://github.com/SerdarAtalay/webtime"><img src="photos/GitHub-Mark-32px.png" alt=""></a>--->
     <!---->
 
-<nav class="navbar navbar-inverse navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Webtime</a>
+        <button type="button" data-toggle="collapse" data-target="  #bs-example-navbar-collapse-1" class="navbar-toggle" aria-expanded="true">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span>
+        </button>
+
+
+
+      <a class="navbar-brand" href="https://github.com/SerdarAtalay/webtime"><img src="photos/GitHub-Mark-Light-32px.png" alt=""></a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ol class="nav navbar-nav">
         <li :class="{active: country.isShown}"
                 v-for="country in countries" @click="toggle(country)" :checked="country.isShown"><a href="#">
                     {{ country.text }}          
                     </a></li>
-      </ul>
+      </ol>
     </div>
   </div>
 </nav>
