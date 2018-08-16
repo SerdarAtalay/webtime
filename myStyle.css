@@ -21,26 +21,10 @@ body {
 	font-weight: normal;
 }
 
-
-#options {
-    background: linear-gradient(white, rgba(163, 171, 184, 0.2));
-}
-
-.button {
-	display: block;
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	color: black;
-    border-radius: 15px;
-    border: 5px solid red;
-}
-
 ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  padding-left: 0;
 }
 
 li {
