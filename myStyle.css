@@ -29,7 +29,7 @@ ul {
   -webkit-align-content: center;
   align-content: center;
   list-style-type: none;
-  padding: 6.18vw;
+  padding: 25px 6.18vw 35px;
 }
 
 li {
