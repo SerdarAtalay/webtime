@@ -33,28 +33,29 @@
     <!---->
 
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-        <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle" aria-expanded="true">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span> 
-            <span class="icon-bar"></span> 
-            <span class="icon-bar"></span>
-        </button>
-
-
-
-      <a class="navbar-brand" href="https://github.com/SerdarAtalay/webtime"><img src="photos/GitHub-Mark-Light-32px.png" alt=""></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ol class="nav navbar-nav">
-        <li :class="{active: country.isShown}"
-                v-for="country in countries" @click="toggle(country)" :checked="country.isShown"><a href="#">
+    <a class="navbar-brand" href="https://github.com/SerdarAtalay/webtime">
+    	<img src="photos/GitHub-Mark-Light-32px.png" alt="">
+    </a>
+  	<div class="container">
+    	<div class="navbar-header">
+        	<button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle" aria-expanded="true">
+            	<span class="sr-only">Toggle navigation</span>
+           	 	<span class="icon-bar"></span> 
+            	<span class="icon-bar"></span> 
+            	<span class="icon-bar"></span>
+        	</button>
+		</div>
+    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ol class="nav navbar-nav">
+        		<li :class="{active: country.isShown}"
+                v-for="country in countries" @click="toggle(country)" :checked="country.isShown">
+                	<a href="#">
                     {{ country.text }}          
-                    </a></li>
-      </ol>
-    </div>
-  </div>
+                    </a>
+                </li>
+      		</ol>
+    	</div>
+  	</div>
 </nav>
 
     <div id="menu">
