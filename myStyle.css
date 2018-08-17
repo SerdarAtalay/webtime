@@ -107,3 +107,6 @@ h2 {
     margin-bottom: 30px;
 }
 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: rgba(63, 258, 155, 0.4);
+}
