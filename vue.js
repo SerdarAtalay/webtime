@@ -2,15 +2,15 @@
         el: "#app",
         data: {
             countries: [
-                { text: "Los Angeles", isShown: false, timezone: "divLosAngeles"
+                { text: "Kordağ", isShown: true, timezone: "divLosAngeles"
             },
-                { text: "New York", isShown: true, timezone: "divNYSE"
+                { text: "New York", isShown: false, timezone: "divNYSE"
             },
-                { text: "London", isShown: true, timezone: "divLondon"
+                { text: "London", isShown: false, timezone: "divLondon"
             },
-                { text: "Berlin", isShown: true, timezone: "divBerlin"
+                { text: "Berlin", isShown: false, timezone: "divBerlin"
             },
-                { text: "Istanbul", isShown: true, timezone: "divBist"
+                { text: "Serdar", isShown: true, timezone: "divBist"
             },
                 { text: "Hong Kong", isShown: false, timezone: "divHongKong"
             },
