@@ -2,7 +2,7 @@
         el: "#app",
         data: {
             countries: [
-                { text: "Kordağ", isShown: true, timezone: "divLosAngeles"
+                { text: "Los Angeles", isShown: true, timezone: "divLosAngeles"
             },
                 { text: "New York", isShown: false, timezone: "divNYSE"
             },
@@ -10,7 +10,7 @@
             },
                 { text: "Berlin", isShown: false, timezone: "divBerlin"
             },
-                { text: "Serdar", isShown: true, timezone: "divBist"
+                { text: "Istanbul", isShown: true, timezone: "divBist"
             },
                 { text: "Hong Kong", isShown: false, timezone: "divHongKong"
             },
