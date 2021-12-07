@@ -2,9 +2,9 @@
         el: "#app",
         data: {
             countries: [
-                { text: "Los Angeles", isShown: true, timezone: "divLosAngeles"
+                { text: "Los Angeles", isShown: false, timezone: "divLosAngeles"
             },
-                { text: "New York", isShown: false, timezone: "divNYSE"
+                { text: "New York", isShown: true, timezone: "divNYSE"
             },
                 { text: "London", isShown: false, timezone: "divLondon"
             },
@@ -18,7 +18,7 @@
             },
                 { text: "Sydney", isShown: false, timezone: "divSydney"
             }
-                
+
             ],
             baseURL: "https://www.google.com/search?q="
 
@@ -37,8 +37,8 @@
     $(function(){
   setInterval(function(){
     var divUtc = $('#divUTC');
-    //put UTC time into divUTC  
-    divUtc.text(moment.utc().format('HH:mm'));      
+    //put UTC time into divUTC
+    divUtc.text(moment.utc().format('HH:mm'));
 
     var divBist = $('#divBist').text(moment.tz('Europe/Istanbul').format('HH:mm'));
     var divTokyo = $('#divTokyo').text(moment.tz('Asia/Tokyo').format('HH:mm'));
